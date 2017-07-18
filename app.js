@@ -9,7 +9,7 @@ var config = require('./config/main');
 
 // Create routes
 var router = require('./app/routes.js');
-var port = process.env.port || 8000;
+var port = process.env.PORT || 8000;
 
 require('dotenv').config();
 require('./config/passport')(passport);
