@@ -6,7 +6,7 @@ var morgan = require('morgan');
 var passport = require('passport');
 var jwt = require('jsonwebtoken');
 var config = require('./config/main');
-var User = require('./app/models/user');
+var User = require('./app/models/User');
 
 // Create routes
 var router = require('./app/routes.js');
