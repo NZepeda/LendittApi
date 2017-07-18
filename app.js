@@ -6,7 +6,6 @@ var morgan = require('morgan');
 var passport = require('passport');
 var jwt = require('jsonwebtoken');
 var config = require('./config/main');
-var User = require('./app/models/User');
 
 // Create routes
 var router = require('./app/routes.js');
@@ -14,7 +13,7 @@ var port = process.env.port || 8000;
 
 require('dotenv').config();
 require('./config/passport')(passport);
-
+require('./app/models/User');
 
 mongoose.connect(config.database);
 
