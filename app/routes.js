@@ -4,10 +4,12 @@ var User = require('./models/User');
 var jwt = require('jsonwebtoken');
 var passport = require('passport');
 var config = require('../config/main');
+var path = require('path');
 
-router.get('/', (req, res) => {
-    res.send('This is just here for testing');
-});
+
+router.get('/', (req, res) =>{
+        res.sendFile(path.resolve(__dirname + '/../client/index.html'));
+    });
 
 // The Registration Route
 // Takes email and password
