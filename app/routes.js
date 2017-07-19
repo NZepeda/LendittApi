@@ -29,10 +29,10 @@ router.post('/api/v1/register', (req, res) => {
 
         newUser.save((err) => {
             if(err) {
-                return res.json({success: false, message: err.message});
+                return res.status(200).json({success: false, message: err.message});
             }
             else{
-                res.json({success: true, message: 'Successfully created the user'});
+                res.status(200).json({success: true, message: 'Successfully created the user'});
             }
         });
     }
@@ -57,11 +57,11 @@ router.post('/api/v1/authenticate', (req, res) => {
                         expiresIn: 3600 // time in seconds (1 hour)
                     });
 
-                    res.json({success: true, token: 'JWT ' + token});
+                    res.status(200).json({success: true, token: 'JWT ' + token});
                 }
                 else{
                     console.log(err);
-                    res.send({success: false, message: 'Authentication failed: Password didn\'t match'});
+                    res.status(200).send({success: false, message: 'Authentication failed: Password didn\'t match'});
                 }
             });
         }
