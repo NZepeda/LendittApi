@@ -15,7 +15,9 @@ require('dotenv').config();
 require('./config/passport')(passport);
 require('./app/models/User');
 
-mongoose.connect(config.database);
+mongoose.connect(config.database, {
+    useMongoClient: true
+});
 
 // Use body-parser to get data from requests
 app.use(bodyParser.urlencoded({extended: false}));
