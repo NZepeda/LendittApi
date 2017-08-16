@@ -18,6 +18,11 @@ var UserSchema = new mongoose.Schema({
         unique: true,
         required: true
     },
+    school: {
+        type: String,
+        lowercase: true,
+        required: true,
+    },
     password: {
         type : String,
         required: true,
