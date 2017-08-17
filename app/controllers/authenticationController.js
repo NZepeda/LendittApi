@@ -6,7 +6,7 @@ var path = require('path');
 
 
 exports.register = (req, res) => {
-
+    console.log(req);
      if(!req.body.email || !req.body.password){
         res.json({success: false, message: 'Please include all data'});
     }
@@ -21,9 +21,11 @@ exports.register = (req, res) => {
 
         newUser.save((err) => {
             if(err) {
+                console.log(err.message);
                 return res.status(200).json({success: false, message: err.message});
             }
             else{
+                console.log("Successfully created the user");
                 res.status(200).json({success: true, message: 'Successfully created the user'});
             }
         });
