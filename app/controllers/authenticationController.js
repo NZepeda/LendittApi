@@ -6,7 +6,7 @@ var path = require('path');
 
 
 exports.register = (req, res) => {
-    console.log(req);
+    
      if(!req.body.email || !req.body.password){
         res.json({success: false, message: 'Please include all data'});
     }
@@ -15,7 +15,7 @@ exports.register = (req, res) => {
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             email: req.body.email,
-            schoo: req.body.school,
+            school: req.body.school,
             password: req.body.password
         });
 
