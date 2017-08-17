@@ -15,6 +15,7 @@ exports.register = (req, res) => {
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             email: req.body.email,
+            schoo: req.body.school,
             password: req.body.password
         });
 
@@ -32,6 +33,7 @@ exports.register = (req, res) => {
 exports.authenticate = (req, res) => {
     User.findOne({email: req.body.email}, (err, user) => {
         if(err){
+            console.log(err);
             throw err;
         }
         if(!user){
